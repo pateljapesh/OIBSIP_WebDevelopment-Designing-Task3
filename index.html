@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="glow glow-hot"></div>
+  <div class="glow glow-cold"></div>
+
+  <main class="card">
+    <header>
+      <div class="badge">UNIT CONVERTER</div>
+      <h1>TEMPERATURE<br><span>CONVERTER</span></h1>
+      <p class="subtitle">Convert between Celsius, Fahrenheit &amp; Kelvin</p>
+    </header>
+
+    <section class="converter">
+
+      <!-- Input -->
+      <div class="field-group">
+        <label for="tempInput">Enter Temperature</label>
+        <div class="input-wrap">
+          <input
+            type="number"
+            id="tempInput"
+            placeholder="e.g. 100"
+            step="any"
+            autocomplete="off"
+          />
+          <span class="unit-tag" id="unitTag">°C</span>
+        </div>
+        <div class="error-msg" id="errorMsg">⚠ Please enter a valid number.</div>
+      </div>
+
+      <!-- Unit selector -->
+      <div class="field-group">
+        <label>From Unit</label>
+        <div class="radio-group">
+          <label class="radio-btn active" id="lbl-C">
+            <input type="radio" name="unit" value="C" checked />
+            <span class="radio-icon">°C</span>
+            <span class="radio-label">Celsius</span>
+          </label>
+          <label class="radio-btn" id="lbl-F">
+            <input type="radio" name="unit" value="F" />
+            <span class="radio-icon">°F</span>
+            <span class="radio-label">Fahrenheit</span>
+          </label>
+          <label class="radio-btn" id="lbl-K">
+            <input type="radio" name="unit" value="K" />
+            <span class="radio-icon">K</span>
+            <span class="radio-label">Kelvin</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Convert button -->
+      <button class="convert-btn" id="convertBtn">
+        <span class="btn-text">CONVERT</span>
+        <span class="btn-arrow">→</span>
+      </button>
+
+      <!-- Results -->
+      <div class="results" id="results">
+        <div class="results-header">Converted Results</div>
+        <div class="results-grid" id="resultsGrid">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <p>Formulas: °F = °C × 9/5 + 32 &nbsp;|&nbsp; K = °C + 273.15</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
